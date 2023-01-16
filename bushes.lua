@@ -210,3 +210,17 @@ if minetest.get_modpath("hedges") then
 end
 
 
+
+
+-- Comprueba si el mod "stairsplus" está activo
+if minetest.global_exists("stairsplus") then
+    -- Registra el nodo bush_leaves con "stairsplus"
+    stairsplus:register_all("flower_bushes", "bush_leaves", "flower_bushes:bush_leaves", {
+        description = "Bush Leaves",
+		tiles = {'flower_bushes_bush_leaves.png'},
+        groups = {snappy = 3, flammable = 2, leaves = 1},
+        sounds = default.node_sound_leaves_defaults(),
+    })
+end
+
+
