@@ -1,21 +1,3 @@
---[[--Bush Steam
-minetest.register_node("flower_bushes:bush_steam", {
-	description = "Bush Steam",
-	drawtype = "plantlike",
-	visual_scale = 1.0,
-	tiles = {"flower_bushes_stem.png"},
-	inventory_image = "flower_bushes_stem.png",
-	wield_image = "flower_bushes_stem.png",
-	paramtype = "light",
-	sunlight_propagates = true,
-	--walkable = false,
-	groups = {snappy = 3, attached_node = 1, flammable = 3, not_in_creative_inventory = 0},
-	sounds = default.node_sound_wood_defaults(),
-	selection_box = {
-		type = "fixed",
-		fixed = {-5 / 9, -0.5, -5 / 9, 5 / 9, 0.5, 5 / 9},
-	},
-})]]--
 
 
 
@@ -27,7 +9,7 @@ minetest.register_node('flower_bushes:bush_leaves', {
     tiles = {'flower_bushes_bush_leaves.png'},
     paramtype = "light",
     --walkable = false,
-    groups = {snappy = 3, flammable = 2, leaves = 1, hedge = 1 },
+    groups = {snappy = 3, flammable = 2, leaves = 1 },
     drop = {
     max_items = 1,
     items = {
@@ -64,7 +46,7 @@ for _, data in pairs(flower_bushes_table) do
 		tiles = {'flower_bushes_bush_leaves.png^(flower_bushes_shadows.png^flower_bushes_' ..data.tiles.. '_flowers.png)'},
 		paramtype = 'light',
 		--walkable = false,
-		groups = {snappy = 3, flammable = 2, dig_immediate = 3, hedge = 1, not_in_creative_inventory = 0},
+		groups = {snappy = 3, flammable = 2, dig_immediate = 3, not_in_creative_inventory = 0},
 		drop = {
 			max_items = 1,
 			items = {
