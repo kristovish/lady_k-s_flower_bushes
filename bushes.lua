@@ -27,7 +27,7 @@ minetest.register_node('flower_bushes:bush_leaves', {
     tiles = {'flower_bushes_bush_leaves.png'},
     paramtype = "light",
     --walkable = false,
-    groups = {snappy = 3, flammable = 2, leaves = 1, hedge = 1, hedge = 1 },
+    groups = {snappy = 3, flammable = 2, leaves = 1, hedge = 1 },
     drop = {
     max_items = 1,
     items = {
@@ -64,8 +64,7 @@ for _, data in pairs(flower_bushes_table) do
 		tiles = {'flower_bushes_bush_leaves.png^(flower_bushes_shadows.png^flower_bushes_' ..data.tiles.. '_flowers.png)'},
 		paramtype = 'light',
 		--walkable = false,
-		groups = {snappy = 3, flammable = 2, dig_immediate = 3, hedge = 1, not_in_creative_inventory = 0, hedge = 1 },
-		drop = 'flower_bushes:' ..data.name.. '_flowers',
+		groups = {snappy = 3, flammable = 2, dig_immediate = 3, hedge = 1, not_in_creative_inventory = 0},
 		drop = {
 			max_items = 1,
 			items = {
@@ -225,27 +224,6 @@ if minetest.get_modpath("hedges") then
 		light_source = 0
 	})
 
-
-	for _, data in pairs(flower_bushes_table) do
-		hedges.register_hedge('flower_bushes:' .. data.name .. '_flower_bush_hedge_full', {
-			description = data.desc..' hedge',
-			texture = 'flower_bushes_bush_leaves.png^flower_bushes_shadows.png^flower_bushes_' ..data.tiles.. '_flowers.png',
-			material = 'flower_bushes:' .. data.name .. '_flower_bush',
-			groups = {snappy = 3, flammable = 2, leaves = 1, hedge = 1, not_in_creative_inventory = 1},
-			sounds = default.node_sound_leaves_defaults(),
-			light_source = 0
-		})
-	end
-	
-	-- Registra también el bush leaves común como un hedge
-	hedges.register_hedge('flower_bushes:bush_leaves_hedge_full', {
-		description = ('Flower Bush Leaves hedge'),
-		texture = 'flower_bushes_bush_leaves.png',
-		material = 'flower_bushes:bush_leaves',
-		groups = {snappy = 3, flammable = 2, leaves = 1, hedge = 1, not_in_creative_inventory = 1},
-		sounds = default.node_sound_leaves_defaults(),
-		light_source = 0
-	})
 
 end
 
